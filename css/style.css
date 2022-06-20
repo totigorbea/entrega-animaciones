@@ -1,0 +1,210 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+.grilla{
+    display: grid;
+    grid-template-columns: .5 fr 2.5fr 2.5fr 1fr;
+    grid-template-areas:
+        "nav header header header"
+        "nav primeraSeccion primeraSeccion aside"
+        "nav segundaSeccion segundaSeccion aside"
+        "nav form form aside"
+        "footer footer footer footer";
+    background-color: #303030;
+    color: white;
+}
+
+.nav{
+    grid-area: nav;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+}
+.nav ul{
+    margin-top: 40px;
+    width: 100%;
+    text-align: center;
+}
+.nav li{
+    list-style: none;
+    padding: 10px;
+    height: 10px;
+
+
+}
+.nav li:hover{
+    background-color: grey;
+}
+.nav a{
+    color: white;
+    text-decoration: none;
+}
+.nav img {
+    width: 150px;
+    transform: translate(50%, 35vh);
+    transition: 1s
+}
+
+
+
+/* HEADER */
+.header{
+    grid-area: header;
+    text-align: center;
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    height: 25vh;
+    margin-top: 0.2px .2px .2px;
+    padding-bottom: 105px;
+    margin-left: 0px;
+}
+.header:hover{
+    transition: 3s;
+    background-color: #8e2dfd;
+}
+
+.header h1{
+    margin: 0px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    font-family: 'Arvo', serif;
+    transform: scale(.5,.5);
+    transition: 1s;
+    animation-name: tituloEnMovimiento;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+
+
+/*PRIMERA SECCION*/
+
+.primeraSeccion{
+    grid-area: segundaSeccion;
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 1rem;
+    
+}
+.primeraSeccion div{
+    display: flex;
+    margin: 1rem .5rem;
+
+}
+.primeraSeccion img{
+    max-width: 300px;
+    margin-left: 2rem;
+    padding-top: 50px;
+    padding-left: 50px;
+}
+.primeraSeccion h3{
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 30px;
+    padding-top: 50px;
+}
+
+/* FORM */
+.form{
+    grid-area: form;
+    min-height: 35vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form h3{
+    font-size: 2rem;
+    margin: 3rem;
+}
+.form div{
+    margin: 0.5px;
+    display: flex;
+    flex-direction: column;
+}
+.form input{
+    height: 2.5rem;
+    width: 350px;
+    text-align: center;
+    background-color: #c6c6c6;
+    margin: 0 auto;
+}
+
+.form input[type=submit]:hover{
+    background-color: rgb(120, 120, 120);
+    color: white;
+}
+
+.footer{
+    grid-area: footer;
+    background-color: black;
+    animation-name: navEnMovimiento;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    margin-top: 0%;
+    margin-bottom: 15px;
+}
+.footer i{
+    font-size: 2rem;
+    
+}
+.formcontacto{
+    display: grid;
+    margin: 15px;
+    align-items: center;
+}
+
+
+
+@keyframes navEnMovimiento {
+    0% {width: 100px;}
+    15% {width: 50px;}
+    25% {width: 300px;}
+    50% {
+        width: 200px;
+        background-color: grey;
+    }
+    75% {width: 300px;}
+    100% {
+        width: 100px;
+        background-color: green;
+    }
+}
+
+@keyframes tituloEnMovimiento {
+    0% {height: 50px;}
+    15% {height: 25px;}
+    25% {height: 150px;}
+    50% {
+        height: 100px;
+        background-color: grey;
+    }
+    75% {height: 150px;}
+    100% {
+        height: 50px;
+        background-color: black;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .fotoPortada img {
+        display: none;
+    }
+    .formcontacto {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .videoContenedor iframe {
+        width: 100%;
+        height: 100%;
+    }
+    .portadaShows img{
+        display: none;
+    }
+}
